@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ナマケモノ検定 超上級 (全25問)</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      max-width: 800px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    .question p {
+      font-weight: bold;
+    }
+    label {
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 30px;
+      padding: 20px;
+      border: 2px solid #444;
+    }
+    #certificate {
+      text-align: center;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ナマケモノ検定 超上級 (全25問)</h1>
+  <p>以下の問題に回答してください。（選択式と記述式の問題があります。各問題は4点満点、60点以上で合格です。）</p>
+  
+  <form id="quizForm" onsubmit="return checkAnswers();">
+    <!-- Name input -->
+    <div class="question">
+      <label for="name"><strong>お名前:</strong></label>
+      <input type="text" id="name" name="name" placeholder="お名前を入力" required>
+    </div>
+    <!-- Question 1 -->
+    <div class="question">
+      <p>問1. ナマケモノが週に1回程度だけ地上に降りるのは何をするためですか？</p>
+      <input type="radio" name="q1" id="q1a" value="A">
+      <label for="q1a">A. 水を飲むため</label><br>
+      <input type="radio" name="q1" id="q1b" value="B">
+      <label for="q1b">B. 排泄をするため</label><br>
+      <input type="radio" name="q1" id="q1c" value="C">
+      <label for="q1c">C. 休むため</label><br>
+      <input type="radio" name="q1" id="q1d" value="D">
+      <label for="q1d">D. 敵から逃れるため</label>
+    </div>
+    <!-- Question 2 -->
+    <div class="question">
+      <p>問2. 現生しているナマケモノの種は全部で何種類でしょうか？</p>
+      <input type="radio" name="q2" id="q2a" value="A">
+      <label for="q2a">A. 2種</label><br>
+      <input type="radio" name="q2" id="q2b" value="B">
+      <label for="q2b">B. 4種</label><br>
+      <input type="radio" name="q2" id="q2c" value="C">
+      <label for="q2c">C. 6種</label><br>
+      <input type="radio" name="q2" id="q2d" value="D">
+      <label for="q2d">D. 8種</label>
+    </div>
+    <!-- Question 3 -->
+    <div class="question">
+      <p>問3. ナマケモノは次のうちどの動物と近縁ですか？</p>
+      <input type="radio" name="q3" id="q3a" value="A">
+      <label for="q3a">A. サル</label><br>
+      <input type="radio" name="q3" id="q3b" value="B">
+      <label for="q3b">B. コアラ</label><br>
+      <input type="radio" name="q3" id="q3c" value="C">
+      <label for="q3c">C. アリクイ</label><br>
+      <input type="radio" name="q3" id="q3d" value="D">
+      <label for="q3d">D. 特に近い種類はない</label>
+    </div>
+    <!-- Question 4 (short-answer) -->
+    <div class="question">
+      <p>問4. ナマケモノが地上で排泄を行うのは、どのような理由だと言われていますか？（自由回答）</p>
+      <input type="text" id="q4" name="q4" placeholder="ここに回答を入力">
+    </div>
+    <!-- Question 5 (short-answer) -->
+    <div class="question">
+      <p>問5. ナマケモノの出産方法にはどのような特徴がありますか？（自由回答）</p>
+      <input type="text" id="q5" name="q5" placeholder="ここに回答を入力">
+    </div>
+    <!-- Question 6 -->
+    <div class="question">
+      <p>問6. ナマケモノは非常に代謝が遅い動物です。一枚の葉を消化するのにどれくらい時間がかかるとされていますか？</p>
+      <input type="radio" name="q6" id="q6a" value="A">
+      <label for="q6a">A. 約1日</label><br>
+      <input type="radio" name="q6" id="q6b" value="B">
+      <label for="q6b">B. 約1週間</label><br>
+      <input type="radio" name="q6" id="q6c" value="C">
+      <label for="q6c">C. 約10日</label><br>
+      <input type="radio" name="q6" id="q6d" value="D">
+      <label for="q6d">D. 約30日</label>
+    </div>
+    <!-- Question 7 -->
+    <div class="question">
+      <p>問7. ナマケモノの筋肉量は同じ大きさの他の哺乳類より少ないですが、人間の何倍の力があると言われていますか？</p>
+      <input type="radio" name="q7" id="q7a" value="A">
+      <label for="q7a">A. 同程度（変わらない）</label><br>
+      <input type="radio" name="q7" id="q7b" value="B">
+      <label for="q7b">B. 約3倍</label><br>
+      <input type="radio" name="q7" id="q7c" value="C">
+      <label for="q7c">C. 約10倍</label><br>
+      <input type="radio" name="q7" id="q7d" value="D">
+      <label for="q7d">D. むしろ弱い</label>
+    </div>
+    <!-- Question 8 -->
+    <div class="question">
+      <p>問8. ナマケモノは水中では地上の何倍の速さで移動できると言われていますか？</p>
+      <input type="radio" name="q8" id="q8a" value="A">
+      <label for="q8a">A. 同じくらい</label><br>
+      <input type="radio" name="q8" id="q8b" value="B">
+      <label for="q8b">B. 約2倍</label><br>
+      <input type="radio" name="q8" id="q8c" value="C">
+      <label for="q8c">C. 約3倍</label><br>
+      <input type="radio" name="q8" id="q8d" value="D">
+      <label for="q8d">D. 約10倍</label>
+    </div>
+    <!-- Question 9 -->
+    <div class="question">
+      <p>問9. ミユビナマケモノ（三本指のナマケモノ）の首の骨（頸椎）は他の哺乳類と比べてどうなっていますか？</p>
+      <input type="radio" name="q9" id="q9a" value="A">
+      <label for="q9a">A. 通常より2つ多い</label><br>
+      <input type="radio" name="q9" id="q9b" value="B">
+      <label for="q9b">B. 他の哺乳類と同じ</label><br>
+      <input type="radio" name="q9" id="q9c" value="C">
+      <label for="q9c">C. 通常より2つ少ない</label><br>
+      <input type="radio" name="q9" id="q9d" value="D">
+      <label for="q9d">D. 個体によって異なる</label>
+    </div>
+    <!-- Question 10 -->
+    <div class="question">
+      <p>問10. フタユビナマケモノ（二本指のナマケモノ）が持つ肋骨の本数（対の数）は次のうちどれでしょう？</p>
+      <input type="radio" name="q10" id="q10a" value="A">
+      <label for="q10a">A. 20本 (10対)</label><br>
+      <input type="radio" name="q10" id="q10b" value="B">
+      <label for="q10b">B. 24本 (12対)</label><br>
+      <input type="radio" name="q10" id="q10c" value="C">
+      <label for="q10c">C. 36本 (18対)</label><br>
+      <input type="radio" name="q10" id="q10d" value="D">
+      <label for="q10d">D. 46本 (23対)</label>
+    </div>
+    <!-- Question 11 -->
+    <div class="question">
+      <p>問11. ナマケモノは最大で約何メートルの高さから落ちても無傷でいられると言われていますか？</p>
+      <input type="radio" name="q11" id="q11a" value="A">
+      <label for="q11a">A. 約3メートル</label><br>
+      <input type="radio" name="q11" id="q11b" value="B">
+      <label for="q11b">B. 約10メートル</label><br>
+      <input type="radio" name="q11" id="q11c" value="C">
+      <label for="q11c">C. 約30メートル</label><br>
+      <input type="radio" name="q11" id="q11d" value="D">
+      <label for="q11d">D. 約100メートル</label>
+    </div>
+    <!-- Question 12 (short-answer) -->
+    <div class="question">
+      <p>問12. ナマケモノの主な食べ物は何でしょうか？（自由回答）</p>
+      <input type="text" id="q12" name="q12" placeholder="ここに回答を入力">
+    </div>
+    <!-- Question 13 -->
+    <div class="question">
+      <p>問13. ナマケモノの主な捕食者（天敵）として知られる動物は次のうちどれですか？</p>
+      <input type="radio" name="q13" id="q13a" value="A">
+      <label for="q13a">A. ユキヒョウ</label><br>
+      <input type="radio" name="q13" id="q13b" value="B">
+      <label for="q13b">B. オウギワシ</label><br>
+      <input type="radio" name="q13" id="q13c" value="C">
+      <label for="q13c">C. カンガルー</label><br>
+      <input type="radio" name="q13" id="q13d" value="D">
+      <label for="q13d">D. カワウソ</label>
+    </div>
+    <!-- Question 14 -->
+    <div class="question">
+      <p>問14. 尾（しっぽ）があるのは、フタユビナマケモノとミユビナマケモノのどちらでしょう？</p>
+      <input type="radio" name="q14" id="q14a" value="A">
+      <label for="q14a">A. フタユビナマケモノ</label><br>
+      <input type="radio" name="q14" id="q14b" value="B">
+      <label for="q14b">B. ミユビナマケモノ</label><br>
+      <input type="radio" name="q14" id="q14c" value="C">
+      <label for="q14c">C. 両方</label><br>
+      <input type="radio" name="q14" id="q14d" value="D">
+      <label for="q14d">D. どちらもない</label>
+    </div>
+    <!-- Question 15 -->
+    <div class="question">
+      <p>問15. ナマケモノが1日に眠る平均時間はどのくらいとされていますか？</p>
+      <input type="radio" name="q15" id="q15a" value="A">
+      <label for="q15a">A. 約3時間</label><br>
+      <input type="radio" name="q15" id="q15b" value="B">
+      <label for="q15b">B. 約9時間</label><br>
+      <input type="radio" name="q15" id="q15c" value="C">
+      <label for="q15c">C. 約15時間</label><br>
+      <input type="radio" name="q15" id="q15d" value="D">
+      <label for="q15d">D. 約22時間</label>
+    </div>
+    <!-- Question 16 -->
+    <div class="question">
+      <p>問16. 絶滅した巨大ナマケモノはある果物の種を散布していたとされています。それは次のうちどの果物でしょう？</p>
+      <input type="radio" name="q16" id="q16a" value="A">
+      <label for="q16a">A. アボカド</label><br>
+      <input type="radio" name="q16" id="q16b" value="B">
+      <label for="q16b">B. ココナッツ</label><br>
+      <input type="radio" name="q16" id="q16c" value="C">
+      <label for="q16c">C. パイナップル</label><br>
+      <input type="radio" name="q16" id="q16d" value="D">
+      <label for="q16d">D. バナナ</label>
+    </div>
+    <!-- Question 17 -->
+    <div class="question">
+      <p>問17. ナマケモノは変温動物です。体温は外気温によって変動しますが、その平均的な範囲は何℃くらいでしょうか？</p>
+      <input type="radio" name="q17" id="q17a" value="A">
+      <label for="q17a">A. 約24～33℃</label><br>
+      <input type="radio" name="q17" id="q17b" value="B">
+      <label for="q17b">B. 約36～38℃</label><br>
+      <input type="radio" name="q17" id="q17c" value="C">
+      <label for="q17c">C. 約15～20℃</label><br>
+      <input type="radio" name="q17" id="q17d" value="D">
+      <label for="q17d">D. 約40℃以上</label>
+    </div>
+    <!-- Question 18 (short-answer) -->
+    <div class="question">
+      <p>問18. ナマケモノの被毛の上で共生している植物は何でしょう？（自由回答）</p>
+      <input type="text" id="q18" name="q18" placeholder="ここに回答を入力">
+    </div>
+    <!-- Question 19 -->
+    <div class="question">
+      <p>問19. 「ナマケモノ」という名前が付いた理由は何でしょうか？</p>
+      <input type="radio" name="q19" id="q19a" value="A">
+      <label for="q19a">A. いつも寝ているように見えるから</label><br>
+      <input type="radio" name="q19" id="q19b" value="B">
+      <label for="q19b">B. 動きが遅く怠け者のように見えるから</label><br>
+      <input type="radio" name="q19" id="q19c" value="C">
+      <label for="q19c">C. 怠け者が発見したから</label><br>
+      <input type="radio" name="q19" id="q19d" value="D">
+      <label for="q19d">D. 鳴き声が「ナマケ」と聞こえるから</label>
+    </div>
+    <!-- Question 20 -->
+    <div class="question">
+      <p>問20. 現生のナマケモノが主に生息しているのはどの地域でしょうか？</p>
+      <input type="radio" name="q20" id="q20a" value="A">
+      <label for="q20a">A. アフリカのサバンナ</label><br>
+      <input type="radio" name="q20" id="q20b" value="B">
+      <label for="q20b">B. オーストラリアの森林</label><br>
+      <input type="radio" name="q20" id="q20c" value="C">
+      <label for="q20c">C. 中南米の熱帯雨林</label><br>
+      <input type="radio" name="q20" id="q20d" value="D">
+      <label for="q20d">D. 東南アジアのジャングル</label>
+    </div>
+    <!-- Question 21 -->
+    <div class="question">
+      <p>問21. 次のナマケモノに関する記述のうち正しいものはどれでしょうか？</p>
+      <input type="radio" name="q21" id="q21a" value="A">
+      <label for="q21a">A. ナマケモノは常に群れで行動し集団で生活する。</label><br>
+      <input type="radio" name="q21" id="q21b" value="B">
+      <label for="q21b">B. ナマケモノは視力が悪く動きは遅いが泳ぎは得意である。</label><br>
+      <input type="radio" name="q21" id="q21c" value="C">
+      <label for="q21c">C. ナマケモノは夜行性ではなく昼間に活動し頻繁に動き回る。</label><br>
+      <input type="radio" name="q21" id="q21d" value="D">
+      <label for="q21d">D. ナマケモノは捕食者に襲われると時速50kmで走って逃げる。</label>
+    </div>
+    <!-- Question 22 -->
+    <div class="question">
+      <p>問22. ナマケモノの寿命は一般的にどれくらいと言われていますか？</p>
+      <input type="radio" name="q22" id="q22a" value="A">
+      <label for="q22a">A. 2～3年</label><br>
+      <input type="radio" name="q22" id="q22b" value="B">
+      <label for="q22b">B. 5～8年</label><br>
+      <input type="radio" name="q22" id="q22c" value="C">
+      <label for="q22c">C. 20～30年</label><br>
+      <input type="radio" name="q22" id="q22d" value="D">
+      <label for="q22d">D. 100年</label>
+    </div>
+    <!-- Question 23 (short-answer) -->
+    <div class="question">
+      <p>問23. ナマケモノが非常に動きが遅い主な理由は何だと考えられていますか？（自由回答）</p>
+      <input type="text" id="q23" name="q23" placeholder="ここに回答を入力">
+    </div>
+    <!-- Question 24 -->
+    <div class="question">
+      <p>問24. 現存する種で最も小さいナマケモノは次のうちどれでしょうか？</p>
+      <input type="radio" name="q24" id="q24a" value="A">
+      <label for="q24a">A. ヒメミユビナマケモノ</label><br>
+      <input type="radio" name="q24" id="q24b" value="B">
+      <label for="q24b">B. ホフマンナマケモノ</label><br>
+      <input type="radio" name="q24" id="q24c" value="C">
+      <label for="q24c">C. コアリクイ</label><br>
+      <input type="radio" name="q24" id="q24d" value="D">
+      <label for="q24d">D. オオナマケモノ</label>
+    </div>
+    <!-- Question 25 -->
+    <div class="question">
+      <p>問25. ナマケモノは1日に平均どのくらいの量の植物を食べると言われていますか？</p>
+      <input type="radio" name="q25" id="q25a" value="A">
+      <label for="q25a">A. 約10グラム</label><br>
+      <input type="radio" name="q25" id="q25b" value="B">
+      <label for="q25b">B. 約100グラム</label><br>
+      <input type="radio" name="q25" id="q25c" value="C">
+      <label for="q25c">C. 約1キログラム</label><br>
+      <input type="radio" name="q25" id="q25d" value="D">
+      <label for="q25d">D. 約5キログラム</label>
+    </div>
+
+    <button type="submit">採点する</button>
+  </form>
+
+  <!-- Pass (certificate) section -->
+  <div id="passSection" style="display:none;">
+    <div id="result">
+      <div id="certificate">
+        <h2>超ナマケモノ検定 超上級 合格証</h2>
+        <p id="certName"></p>
+        <p>
+          あなたは超ナマケモノ検定超上級において優秀な成績を収められました。<br>
+          よってここにその栄誉を称え、「超ナマケモノ」の称号を授与いたします。
+        </p>
+        <p id="certDate"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fail section -->
+  <div id="failSection" style="display:none;">
+    <div id="result">
+      <h2>不合格</h2>
+      <p id="failMsg"></p>
+      <p id="scoreMsg"></p>
+      <p>60点以上で合格です。再挑戦する場合はページをリロードしてください。</p>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      var score = 0;
+      var total = 25 * 4;
+      // Correct answers data: letters for multiple-choice, keywords array for short-answer
+      var correctAnswers = {
+        1: "B",  2: "C",  3: "C",  4: ["蛾"],              5: ["逆さ","さかさ","ぶら下","ぶらさが"],
+        6: "D",  7: "B",  8: "C",  9: "A",               10: "D",
+        11: "C", 12: ["葉","はっぱ"], 13: "B", 14: "B",  15: "B",
+        16: "A", 17: "A", 18: ["苔","藻","こけ"], 19: "B", 20: "C",
+        21: "B", 22: "C", 23: ["代謝","エネルギー"], 24: "A", 25: "A"
+      };
+
+      // Grade each question
+      for (var i = 1; i <= 25; i++) {
+        if (Array.isArray(correctAnswers[i])) {
+          // Short-answer: check if any keyword is present
+          var userAns = document.getElementById('q' + i).value.trim();
+          if (userAns) {
+            for (var j = 0; j < correctAnswers[i].length; j++) {
+              if (userAns.indexOf(correctAnswers[i][j]) !== -1) {
+                score += 4;
+                break;
+              }
+            }
+          }
+        } else {
+          // Multiple-choice: check selected value
+          var selected = document.querySelector('input[name="q' + i + '"]:checked');
+          if (selected && selected.value === correctAnswers[i]) {
+            score += 4;
+          }
+        }
+      }
+
+      // Determine pass or fail
+      var passScore = 60;
+      var nameInput = document.getElementById('name').value.trim();
+      var displayName = nameInput === "" ? "名無し" : nameInput;
+      if (score >= passScore) {
+        // Pass: show certificate
+        document.getElementById('certName').innerText = displayName + " 殿";
+        // Format date as YYYY年M月D日
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth() + 1;
+        var day = today.getDate();
+        document.getElementById('certDate').innerText = year + "年" + month + "月" + day + "日";
+        document.getElementById('passSection').style.display = "block";
+      } else {
+        // Fail: show fail message
+        document.getElementById('failMsg').innerText = (displayName ? displayName + "さん、" : "") + "残念ながら不合格です。";
+        document.getElementById('scoreMsg').innerText = "得点: " + score + "点 / " + total + "点";
+        document.getElementById('failSection').style.display = "block";
+      }
+      // Hide the quiz form after grading
+      document.getElementById('quizForm').style.display = "none";
+      return false;  // prevent actual form submission
+    }
+  </script>
+
+</body>
+</html>
